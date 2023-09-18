@@ -4,7 +4,13 @@ function convertTo25Words(rBits, rBitsLength, cBits, cBitsLength, wordLength){
   const bBitsString = rBitsString + cBitsString
   const bBits = parseInt(bBitsString, 2)
 
-  console.log(bBitsString)
+  const stateArray = [[], [], [], [], []]
+  for(let y = 0; y < 5; y++){
+    for(let x = 0; x < 5; x++){
+      stateArray[x][y] = bBits << wordLength
+    }
+  }
+  console.log(stateArray)
 }
 
 function theta(){
@@ -37,6 +43,6 @@ function fFunction(rBits, rBitsLength, cBits, cBitsLength, l){
 
 module.exports = fFunction
 
-const rBits = 0b101
+const rBits = 0b
 const cBits = 0b011
 convertTo25Words(rBits, 3, cBits, 3, 64)
